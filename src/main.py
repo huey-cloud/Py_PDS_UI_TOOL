@@ -1,17 +1,34 @@
-# 샘플 Python 스크립트입니다.
+"""애플리케이션 진입점.
 
-# Shift+F10을(를) 눌러 실행하거나 내 코드로 바꿉니다.
-# 클래스, 파일, 도구 창, 액션 및 설정을 어디서나 검색하려면 Shift 두 번을(를) 누릅니다.
+실행 (둘 다 지원):
+    python -m src.main          # 프로젝트 루트에서 모듈로 실행 (권장)
+    python src/main.py          # 파일을 직접 실행 (PyCharm '실행' 버튼 등)
+"""
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+# 파일을 직접 실행(python src/main.py)하면 프로젝트 루트가 sys.path에
+# 자동으로 잡히지 않아 'src' 패키지를 못 찾는 경우가 있다.
+# 이 스크립트가 패키지의 일부로 실행된 게 아니라면(=직접 실행) 프로젝트
+# 루트를 sys.path 맨 앞에 넣어 'python -m' 없이도 동작하게 만든다.
+if __package__ in (None, ""):
+    _PROJECT_ROOT = Path(__file__).resolve().parent.parent
+    if str(_PROJECT_ROOT) not in sys.path:
+        sys.path.insert(0, str(_PROJECT_ROOT))
+
+from PySide6.QtWidgets import QApplication
+
+from src.ui.main_window import MainWindow
 
 
-def print_hi(name):
-    # 스크립트를 디버그하려면 하단 코드 줄의 중단점을 사용합니다.
-    print(f'Hi2222222223232323, {name}')  # 중단점을 전환하려면 Ctrl+F8을(를) 누릅니다.
-    print('sesaasetqweqweqweqwe')
-    print ('j')
+def main() -> None:
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())
 
-# 스크립트를 실행하려면 여백의 녹색 버튼을 누릅니다.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# https://www.jetbrains.com/help/pycharm/에서 PyCharm 도움말 참조
+if __name__ == "__main__":
+    main()
