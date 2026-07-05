@@ -1,0 +1,11 @@
+설비ID,설비명,라인,알람코드,알람명,발생일시,해제일시,심각도
+EQ-001,Etcher-01,LINE_A,A101,Chamber Pressure High,2026-06-01 08:12,2026-06-01 08:40,Critical
+EQ-002,CVD-03,LINE_A,C204,Gas Flow Deviation,2026-06-01 09:05,2026-06-01 09:20,Major
+EQ-001,Etcher-01,LINE_A,A102,Door Interlock,2026-06-02 10:15,2026-06-02 10:18,Minor
+EQ-003,Photo-02,LINE_B,P301,Wafer Align Fail,2026-06-02 11:30,2026-06-02 12:00,Major
+EQ-004,CMP-01,LINE_B,M110,Slurry Level Low,2026-06-03 07:45,2026-06-03 08:10,Minor
+EQ-002,CVD-03,LINE_A,C205,Temperature Overshoot,2026-06-03 14:22,2026-06-03 14:55,Critical
+EQ-005,Etcher-05,LINE_C,A105,RF Match Fail,2026-06-04 16:00,2026-06-04 16:45,Critical
+EQ-003,Photo-02,LINE_B,P302,Reticle Load Error,2026-06-04 09:10,2026-06-04 09:25,Minor
+EQ-004,CMP-01,LINE_B,M111,Pad Conditioner Alarm,2026-06-05 13:05,2026-06-05 13:30,Major
+EQ-001,Etcher-01,LINE_A,A103,Vacuum Pump Trip,2026-06-05 18:20,2026-06-05 19:00,Critical
